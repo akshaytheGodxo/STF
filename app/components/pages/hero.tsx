@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { MoveRight } from "lucide-react";
 
 export default function Hero() {
@@ -10,25 +10,27 @@ export default function Hero() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-20 flex flex-row">
-      <div className="font-[Playfair_Display] text-8xl ">
-        <div className="block">
-          SMALL<br></br>
-          TICKET<br></br>
+    <section className="sm:max-w-[1200px] max-w-screen mx-auto px-6 py-20 flex lg:flex-row flex-col gap-y-20">
+      <div className="font-[Playfair_Display] text-[12vw] lg:text-8xl w-full lg:w-fit break-words">
+        <div className="block leading-none">
+          SMALL<br />
+          TICKET<br />
           FUNDING
         </div>
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 0.6 }}
-          className="h-[1px] bg-white w-full block"
+          className="h-[1px] bg-white w-full block "
         ></motion.div>
 
-        <span className="text-base block">Founder Friendly Capital</span>
+        <span className="text-sm md:text-base block">
+          Founder Friendly Capital
+        </span>
       </div>
 
-      <div className="font-['Inter'] space-y-6 ml-auto mt-40">
-        <h2 className="text-3xl text-right md:text-5xl font-semibold tracking-tighter leading-tight ">
+      <div className="font-['Inter'] space-y-6 lg:ml-auto w-full lg:w-auto lg:mt-40">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tighter leading-tight text-right">
           We back <br />
           bold founders <br />
           <span className="relative inline-block">
@@ -42,7 +44,7 @@ export default function Hero() {
           </span>
         </h2>
 
-        <h4 className="text-xl md:text-xl font-semibold text-neutral-400">
+        <h4 className="text-base md:text-xl font-semibold text-neutral-400 text-right">
           Pre-seed to seed. Sector-agnostic. Founder-obsessed.
         </h4>
 
