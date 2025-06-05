@@ -2,7 +2,7 @@
 import Hero from "./components/pages/hero";
 import Lenis from "lenis";
 import { useEffect } from "react";
-
+import About from "./components/pages/about";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({});
@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <main className="">
      <Hero /> 
+     <About />
     </main>
   );
 }

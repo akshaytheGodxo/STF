@@ -2,14 +2,12 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect, useRef} from "react";
-import { MoveRight } from 'lucide-react';
+import { useState, useEffect, useRef } from "react";
+import { MoveRight } from "lucide-react";
 
 export default function Hero() {
   const [hovered, setHovered] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-20 flex flex-row">
@@ -20,18 +18,14 @@ export default function Hero() {
           FUNDING
         </div>
         <motion.div
-        
-        initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 0.6 }}
-        className="h-[1px] bg-white w-full block"></motion.div>
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 0.6 }}
+          className="h-[1px] bg-white w-full block"
+        ></motion.div>
 
-        <span
-        
-        
-        className="text-base block">Founder Friendly Capital</span>
+        <span className="text-base block">Founder Friendly Capital</span>
       </div>
-
 
       <div className="font-['Inter'] space-y-6 ml-auto mt-40">
         <h2 className="text-3xl text-right md:text-5xl font-semibold tracking-tighter leading-tight ">
@@ -52,44 +46,48 @@ export default function Hero() {
           Pre-seed to seed. Sector-agnostic. Founder-obsessed.
         </h4>
 
-
-    <motion.button
-      className="bg-transparent border-white border-2 rounded-3xl w-full h-10 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="relative h-full w-full flex items-center justify-center">
-        <AnimatePresence initial={false} mode="wait">
-          {!hovered ? (
-            <motion.span
-              key="text"
-              initial={{ y: -10, opacity: 0, position: "absolute" }}
-              animate={{ y: 0, opacity: 1, position: "absolute" }}
-              exit={{ y: -10, opacity: 0, position: "absolute" }}
-              transition={{ duration: 0.3, ease: "easeInOut" , type: "spring"}}
-              className="flex items-center justify-center w-full"
-            >
-              Pitch to us
-            </motion.span>
-          ) : (
-            <motion.span
-              key="icon"
-              initial={{ y: 10, opacity: 0, position: "absolute" }}
-              animate={{ y: 0, opacity: 1, position: "absolute" }}
-              exit={{ y: 10, opacity: 0, position: "absolute" }}
-              transition={{ duration: 0.3, ease: "easeInOut" , type: "spring"}}
-              className="flex items-center justify-center w-full"
-            >
-              <MoveRight size={20} />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <motion.button
+          className="bg-transparent border-white border-2 rounded-3xl w-full h-10 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <div className="relative h-full w-full flex items-center justify-center">
+            <AnimatePresence initial={false} mode="wait">
+              {!hovered ? (
+                <motion.span
+                  key="text"
+                  initial={{ y: -10, opacity: 0, position: "absolute" }}
+                  animate={{ y: 0, opacity: 1, position: "absolute" }}
+                  exit={{ y: -10, opacity: 0, position: "absolute" }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    type: "spring",
+                  }}
+                  className="flex items-center justify-center w-full"
+                >
+                  Pitch to us
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="icon"
+                  initial={{ y: 10, opacity: 0, position: "absolute" }}
+                  animate={{ y: 0, opacity: 1, position: "absolute" }}
+                  exit={{ y: 10, opacity: 0, position: "absolute" }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    type: "spring",
+                  }}
+                  className="flex items-center justify-center w-full"
+                >
+                  <MoveRight size={20} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.button>
       </div>
-    </motion.button>
-        
-      </div>
-      
-
     </section>
   );
 }
