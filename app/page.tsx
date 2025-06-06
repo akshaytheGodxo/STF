@@ -4,7 +4,6 @@ import Lenis from "lenis";
 import { useEffect } from "react";
 import About from "./components/pages/about";
 import WhatWeDo from "./components/pages/wwd";
-import ApplySection from "./components/pages/apply";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({});
