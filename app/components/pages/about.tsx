@@ -1,5 +1,7 @@
-import Image from "next/image";
-import { motion } from "framer-motion";
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const achievements = [
   "15+ years of startup ecosystem experience",
@@ -20,94 +22,78 @@ const achievements2 = [
 
 export default function About() {
   return (
-    <section className="flex flex-col max-w-[1200px] mx-auto px-6 mt-40 space-y-20">
-      <div className="font-[Playfair_Display] text-white text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
+    <section className="flex flex-col max-w-[1200px] mx-auto px-6 mt-40 space-y-20 text-white font-[Inter]">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="font-[Inter] text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight"
+      >
         About Us
-      </div>
+      </motion.h2>
 
-      <div className="flex flex-col lg:flex-row gap-12 justify-between items-center">
-        {/* Stanley */}
-        <div className="flex flex-col justify-start font-[Inter] text-white w-full max-w-[600px]">
-          <div className="text-left mb-6 w-fit">
-            <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-              Stanley Stephen
-            </h3>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 0.6 }}
-              className="h-[1px] bg-white mt-1"
-            />
-            <h4 className="text-base">Managing Director</h4>
-          </div>
-
-          <div className="relative border-l-[2px] border-white pl-6 space-y-6 mt-6">
-            {achievements.map((item, index) => (
+      {[{
+        name: "Stanley Stephen",
+        role: "Managing Director",
+        img: "/stanley.jpg",
+        list: achievements
+      }, {
+        name: "Sandro Stephen",
+        role: "Managing Director",
+        img: "/sandro.jpg",
+        list: achievements2
+      }].map((person, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: i * 0.2 }}
+          viewport={{ once: true }}
+          className="group w-full bg-neutral-900 rounded-2xl border border-neutral-700 p-8 flex flex-col lg:flex-row gap-12 items-center hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300"
+        >
+          {/* Left text */}
+          <div className="flex flex-col w-full max-w-[600px]">
+            <div className="mb-6">
+              <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight">{person.name}</h3>
               <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="absolute left-[-14px] top-1 w-3 h-3 bg-white rounded-full" />
-                <p className="text-sm leading-relaxed">{item}</p>
-              </motion.div>
-            ))}
+                initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 0.6 }}
+                className="h-[1px] bg-white mt-1"
+              />
+              <h4 className="text-base mt-1">{person.role}</h4>
+            </div>
+
+            <div className="relative  pl-6 space-y-6 mt-6">
+              {person.list.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.15, duration: 0.4 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="absolute left-[-14px] top-1 w-1 h-1 bg-white rounded-full" />
+                  <p className="text-sm leading-relaxed">{item}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <Image
-          src="/stanley.jpg"
-          alt="Stanley's photo"
-          width={400}
-          height={400}
-          className="w-full max-w-[400px] object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-12 justify-between items-center">
-        {/* Sandro */}
-        <div className="flex flex-col justify-start font-[Inter] text-white w-full max-w-[600px]">
-          <div className="text-left mb-6 w-fit">
-            <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-              Sandro Stephen
-            </h3>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 0.6 }}
-              className="h-[1px] bg-white mt-1"
+          {/* Right image */}
+          <div className="rounded-xl overflow-hidden">
+            <Image
+              src={person.img}
+              alt={`${person.name}'s photo`}
+              width={400}
+              height={400}
+              className="w-full max-w-[400px] object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
             />
-            <h4 className="text-base">Managing Director</h4>
           </div>
-
-          <div className="relative border-l-[2px] border-white pl-6 space-y-6 mt-6">
-            {achievements2.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="absolute left-[-14px] top-1 w-3 h-3 bg-white rounded-full" />
-                <p className="text-sm leading-relaxed">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <Image
-          src="/sandro.jpg"
-          alt="Sandro's photo"
-          width={400}
-          height={400}
-          className="w-full max-w-[400px] object-cover"
-        />
-      </div>
+        </motion.div>
+      ))}
     </section>
   );
 }
