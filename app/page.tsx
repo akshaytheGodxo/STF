@@ -30,7 +30,7 @@ export default function Home() {
      <WhatWeDo />
     <Apply />
     <JoinTheMission />
-    <div className="contacts">
+    <div id="contacts">
       <Contact />
     </div>
     <div id="portfolio">
