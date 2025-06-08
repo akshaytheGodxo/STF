@@ -29,9 +29,6 @@ export default function MediaAndAIF() {
   />
 </motion.h2>
 
-        <p className="text-neutral-400 text-lg">
-          Coming soon – Stay tuned for our media coverage and press mentions.
-        </p>
       </motion.div>
 
       {/* AIF Details */}
