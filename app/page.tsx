@@ -9,6 +9,7 @@ import JoinTheMission from "./components/pages/join";
 import Contact from "./components/pages/contacts";
 import MediaAndAIF from "./components/pages/media";
 import Portfolio from "./components/pages/portfolio";
+import Navbar from "./components/pages/nav";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({});
@@ -19,15 +20,24 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
   return (
+    <>
+    <Navbar />
     <main className="space-y-32">
      <Hero /> 
-     <About />
+     <div id="about">
+       <About />
+     </div>
      <WhatWeDo />
     <Apply />
     <JoinTheMission />
-    <Contact />
-    <Portfolio />
+    <div className="contacts">
+      <Contact />
+    </div>
+    <div id="portfolio">
+      <Portfolio />
+    </div>
     <MediaAndAIF />
     </main>
+    </>
   );
 }
