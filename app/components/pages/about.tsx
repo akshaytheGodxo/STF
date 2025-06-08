@@ -96,7 +96,7 @@ export default function About() {
               alt={person.name}
               width={500}
               height={500}
-              className="rounded-2xl object-cover grayscale hover:grayscale-0 transition duration-500"
+              className="rounded-2xl object-cover  hover:grayscale-0 transition duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 rounded-2xl" />
           </div>

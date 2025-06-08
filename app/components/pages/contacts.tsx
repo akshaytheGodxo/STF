@@ -41,7 +41,7 @@ export default function Contact() {
 
         <div className="flex space-x-6 pt-6">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/stanley-stephen-20946984/"
             target="_blank"
             className="flex items-center space-x-2 text-neutral-200 hover:text-[#39FF14] transition"
           >
