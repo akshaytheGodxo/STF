@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Rocket, TreeDeciduous } from "lucide-react";
-
+import { HoverEffect } from "../ui/card-hover-effect";
 const whatWeDoPoints = [
   "Sector-agnostic (core: Fintech, Healthtech, Cleantech, Consumer Tech, D2C, SaaS)",
   "Active support: Hiring, GTM strategy, follow-on fundraising",
@@ -15,6 +15,25 @@ const whyChoosePoints = [
   "Focus: Niche markets, strong founder-market fit",
 ];
 
+const cardsDescriptions = [
+  {
+    title: <Sparkles size={100} className="mx-auto"/>,
+    description: "Pre-Seed",
+    link: "/",
+  },
+  {
+    title: <Rocket size={100} className="mx-auto"/>,
+    description: "Early",
+    link: "/",
+  },
+  {
+    title: <TreeDeciduous size={100} className="mx-auto"/>,
+    description: "Seed",
+    link: "/",
+  },
+]
+
+
 export default function WhatWeDo() {
   return (
     <section className="max-w-[1200px] mx-auto px-6 mt-40 text-white font-[Inter] space-y-20">
@@ -26,17 +45,16 @@ export default function WhatWeDo() {
         viewport={{ once: true }}
         
       >
-        <h2 className="text-4xl sm:text-5xl w-full text-center font-semibold tracking-tight mb-6 relative  justify-center flex pb-2">
-          What We Do
-          <motion.span
-            layoutId="underline"
-            initial={{ width: 0 }}
-            animate={{ width: "50%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute  bottom-0 h-1 bg-white rounded"
-          />
-        </h2>
-
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative mb-6 flex pb-2 justify-center"
+      >
+        <span className="border-b-2 border-white">What We Do</span>
+        
+      </motion.h2>
         <div className="bg-neutral-900 rounded-xl p-8 space-y-6 border border-neutral-700">
           <h3 className="text-2xl font-bold text-white">
             Pre-Seed & Seed Capital
@@ -56,8 +74,8 @@ export default function WhatWeDo() {
           </ul>
 
           {/* Flow Chart */}
-
         </div>
+          <HoverEffect items={cardsDescriptions} className=""/>
       </motion.div>
 
       {/* WHY CHOOSE US */}
@@ -67,16 +85,16 @@ export default function WhatWeDo() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl sm:text-5xl w-full text-center font-semibold tracking-tight mb-6 relative  justify-center flex pb-2">
-          Why Choose Small Ticket
-          <motion.span
-            layoutId="underline"
-            initial={{ width: 0 }}
-            animate={{ width: "50%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute  bottom-0 h-1 bg-white rounded"
-          />
-        </h2>
+        <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative mb-6 flex pb-2 justify-center"
+      >
+        <span className="border-b-2 border-white">Why coose Small Ticket </span>
+
+      </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           {whyChoosePoints.map((point, index) => (

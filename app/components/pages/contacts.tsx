@@ -14,14 +14,7 @@ export default function Contact() {
         className="space-y-8"
       >
         <h2 className="text-4xl sm:text-5xl w-full text-center font-semibold tracking-tight mb-6 relative  justify-center flex pb-2">
-          Get in Touch
-          <motion.span
-            layoutId="underline"
-            initial={{ width: 0 }}
-            animate={{ width: "50%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute  bottom-0 h-1 bg-white rounded"
-          />
+          <span className="border-b-2 border-white">Get in Touch</span>
         </h2>
 
         <p className="text-lg text-center text-neutral-300">

@@ -12,14 +12,10 @@ export default function Portfolio() {
         viewport={{ once: true }}
         className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative flex pb-2 justify-center"
       >
-        Portfolio{" "}
-        <motion.span
-          layoutId="underline"
-          initial={{ width: 0 }}
-          whileInView={{ width: "50%" }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="absolute w-fit  bottom-0 h-1 bg-white rounded"
-        />
+        <span className="border-b-2 border-white">
+          Portfolio{" "}
+          
+        </span>
       </motion.h2>
 
       <motion.div

@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const achievements = [
   "15+ years of startup ecosystem experience",
   "Ex-Director, TiE Delhi-NCR, Head Investment Pillar",
   "Ex-Associate Partner, Rukam Capital (SEBI registered)",
-  "Portfolio: Burger Singh, Sleepy Owl, Pilgrim, Beco",
+  "Portfolio highlits: Burger Singh, Sleepy Owl, Pilgrim, Beco",
   "Indian Angel Network Incubator member",
-]
+];
 
 const achievements2 = [
   "10+ years of capital raising experience",
@@ -18,7 +18,7 @@ const achievements2 = [
   "Track record: 1 Unicorn, 2 Soonicorns",
   "Portfolio highlights: Spinny, Zypp, Yaantra.",
   "Ex-VP Indian Angel Network",
-]
+];
 
 const team = [
   {
@@ -33,7 +33,7 @@ const team = [
     img: "/sandro.jpg",
     list: achievements2,
   },
-]
+];
 
 export default function About() {
   return (
@@ -43,18 +43,11 @@ export default function About() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
   viewport={{ once: true }}
-  className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative flex pb-2 justify-center"
+  className="text-5xl md:text-6xl font-semibold tracking-tight text-center relative mx-auto flex flex-col pb-2 justify-center"
 >
-  About Us
-  <motion.span
-    layoutId="underline"
-    initial={{ width: 0 }}
-    whileInView={{ width: "50%" }}
-    transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="absolute w-fit  bottom-0 h-1 bg-white rounded"
-  />
-</motion.h2>
+  <span className="w-fit mx-auto border-b-2 border-white">About Us</span>
 
+</motion.h2>
 
       {team.map((person, i) => (
         <motion.div
@@ -63,11 +56,15 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: i * 0.2 }}
           viewport={{ once: true }}
-          className={`flex flex-col-reverse lg:flex-row items-center gap-16 ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+          className={`flex flex-col-reverse lg:flex-row items-center gap-16 ${
+            i % 2 === 1 ? "lg:flex-row-reverse" : ""
+          }`}
         >
           {/* Text Section */}
           <div className="flex-1 space-y-4">
-            <h3 className="text-3xl md:text-4xl font-semibold">{person.name}</h3>
+            <h3 className="text-3xl md:text-4xl font-semibold">
+              {person.name}
+            </h3>
             <p className="text-neutral-400 text-base mb-4">{person.role}</p>
 
             <div className="space-y-5 border-l-2 border-white/20 pl-6">
@@ -80,9 +77,11 @@ export default function About() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className='flex flex-row space-x-2'>
+                  <div className="flex flex-row space-x-2">
                     <span className=" w-1 h-1 my-auto rounded-full bg-white/80" />
-                    <p className="text-sm text-neutral-300 leading-relaxed">{item}</p>
+                    <p className="text-sm text-neutral-300 leading-relaxed">
+                      {item}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -103,5 +102,5 @@ export default function About() {
         </motion.div>
       ))}
     </section>
-  )
+  );
 }
