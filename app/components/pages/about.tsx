@@ -43,15 +43,15 @@ export default function About() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
   viewport={{ once: true }}
-  className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative inline-block pb-2"
+  className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative flex pb-2 justify-center"
 >
   About Us
   <motion.span
     layoutId="underline"
     initial={{ width: 0 }}
-    whileInView={{ width: "100%" }}
+    whileInView={{ width: "50%" }}
     transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="absolute left-0 bottom-0 h-1 bg-white rounded"
+    className="absolute w-fit  bottom-0 h-1 bg-white rounded"
   />
 </motion.h2>
 

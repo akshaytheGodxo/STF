@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Mail, Linkedin, Twitter } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -13,23 +13,22 @@ export default function Contact() {
         viewport={{ once: true }}
         className="space-y-8"
       >
-        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#ffffff] relative inline-block pb-2">
-  Get in Touch
-  <motion.span
-    initial={{ width: 0 }}
-    whileInView={{ width: "100%" }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="absolute left-0 bottom-0 h-1 bg-white rounded"
-  />
-</h2>
+        <h2 className="text-4xl sm:text-5xl w-full text-center font-semibold tracking-tight mb-6 relative  justify-center flex pb-2">
+          Get in Touch
+          <motion.span
+            layoutId="underline"
+            initial={{ width: 0 }}
+            animate={{ width: "50%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute  bottom-0 h-1 bg-white rounded"
+          />
+        </h2>
 
-
-        <p className="text-lg text-neutral-300">
+        <p className="text-lg text-center text-neutral-300">
           Questions? Partnerships? Press?
         </p>
 
-        <div className="flex items-center space-x-3 text-lg">
+        <div className="flex items-center justify-center space-x-3 text-lg">
           <Mail className="text-[#ffffff]" size={20} />
           <a
             href="mailto:stanleyteam@smallticketfunding.vc"
@@ -39,7 +38,7 @@ export default function Contact() {
           </a>
         </div>
 
-        <div className="flex space-x-6 pt-6">
+        <div className="flex space-x-6 pt-6 justify-center">
           <a
             href="https://www.linkedin.com/in/stanley-stephen-20946984/"
             target="_blank"
