@@ -5,7 +5,7 @@ import { Mail, Linkedin, Twitter } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-20 text-white font-[Inter]">
+    <section className="max-w-[1200px] mx-auto px-6 py-20  font-[Inter]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -17,15 +17,15 @@ export default function Contact() {
           <span className="border-b-2 border-white">Get in Touch</span>
         </h2>
 
-        <p className="text-lg text-center text-neutral-300">
+        <p className="text-lg text-center text-neutral-300/[2]">
           Questions? Partnerships? Press?
         </p>
 
         <div className="flex items-center justify-center space-x-3 text-lg">
-          <Mail className="text-[#ffffff]" size={20} />
+          <Mail className="" size={20} />
           <a
             href="mailto:stanleyteam@smallticketfunding.vc"
-            className="hover:underline text-neutral-200"
+            className="hover:underline text-neutral-200/[2]"
           >
             stanleyteam@smallticketfunding.vc
           </a>
@@ -35,7 +35,7 @@ export default function Contact() {
           <a
             href="https://www.linkedin.com/in/stanley-stephen-20946984/"
             target="_blank"
-            className="flex items-center space-x-2 text-neutral-200 hover:text-[#39FF14] transition"
+            className="flex items-center space-x-2 text-neutral-200/[2] hover:text-[#b3b8b2] transition"
           >
             <Linkedin size={20} />
             <span>LinkedIn</span>
@@ -43,14 +43,14 @@ export default function Contact() {
           <a
             href="https://twitter.com"
             target="_blank"
-            className="flex items-center space-x-2 text-neutral-200 hover:text-[#39FF14] transition"
+            className="flex items-center space-x-2 text-neutral-200/[2] hover:text-[#b3b8b2] transition"
           >
             <Twitter size={20} />
             <span>Twitter</span>
           </a>
           <a
             href="#"
-            className="flex items-center space-x-2 text-neutral-200 hover:text-[#39FF14] transition"
+            className="flex items-center space-x-2 text-neutral-200/[2] hover:text-[#b3b8b2] transition"
           >
             <span className="w-3 h-3 bg-[#ffffff] rounded-full" />
             <span>Newsletter</span>

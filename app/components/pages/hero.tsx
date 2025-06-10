@@ -49,7 +49,7 @@ export default function Hero() {
         </h4>
 
         <motion.button
-          className="bg-transparent border-white border-2 rounded-3xl w-full h-10 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center"
+          className="bg-transparent  border-2 rounded-3xl w-full h-10 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >

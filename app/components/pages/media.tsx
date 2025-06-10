@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function MediaAndAIF() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-20 font-[Inter] text-white space-y-4">
+    <section className="max-w-[1200px] mx-auto px-6 py-20 font-[Inter]  space-y-4">
       {/* Media & Mentions */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export default function MediaAndAIF() {
         viewport={{ once: true }}
         className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative flex pb-2 justify-center"
       >
-        <span className="border-b-2 border-white">Media & Mentions{" "}</span>
+        <span className="border-b-2 ">Media & Mentions{" "}</span>
 
       </motion.h2>
       </motion.div>
@@ -32,7 +32,7 @@ export default function MediaAndAIF() {
         viewport={{ once: true }}
         className="bg-neutral-900 rounded-xl p-6 border border-neutral-700 space-y-4"
       >
-        <h3 className="text-2xl font-semibold mb-2">AIF Details</h3>
+        <h3 className="text-2xl font-semibold mb-2 text-neutral-300">AIF Details</h3>
         <ul className="text-neutral-300 text-base space-y-2 list-disc list-inside">
           <li>
             <span className="text-white">AIF’s Name:</span> Small Ticket Funding
