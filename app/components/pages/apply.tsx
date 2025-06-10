@@ -22,7 +22,7 @@ export default function Apply() {
   const hourAngle = (hour % 12) * 30 + minute * 0.5;
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-20 text-white font-[Inter]">
+    <div className="max-w-[1200px] mx-auto px-6 py-20  font-[Inter]">
       <div className="grid grid-rows-1 lg:grid-rows-2 gap-16 items-center">
         {/* Left Side */}
         <motion.div
@@ -51,7 +51,7 @@ export default function Apply() {
 
           <motion.button
             type="button"
-            className="text-black border-white bg-white border-2 rounded-3xl w-44 h-12 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto"
+            className="   border-2 rounded-3xl w-44 h-12 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >

@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import { useTheme } from "next-themes";
+import { cn } from "@/app/lib/utils";
 export default function JoinTheMission() {
+  const { theme } = useTheme();
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-20 font-[Inter] text-white">
+    <section className="max-w-[1200px] mx-auto px-6 py-20 font-[Inter] ">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,16 +23,11 @@ export default function JoinTheMission() {
           className="flex-1 space-y-6"
         >
           <h2 className="text-5xl font-bold tracking-tight leading-tight relative inline-block pb-2">
-  Join the Mission
-  <motion.span
-    initial={{ width: 0 }}
-    animate={{ width: "100%" }}
-    transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="absolute left-0 bottom-0 h-1 bg-white rounded"
-  />
-</h2>
+            <span className="border-b-2 ">Join the Mission</span>
+            
+          </h2>
 
-          <p className="text-lg text-gray-300 max-w-xl">
+          <p className={cn("text-lg  max-w-xl", theme === "dark"? "text-gray-300" : "text-gray-600")}>
             We’re building the future of Indian entrepreneurship. <br />
             Looking for driven minds who think like founders.
           </p>
@@ -42,7 +39,7 @@ export default function JoinTheMission() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex-1 bg-neutral-900 border border-white/10 rounded-2xl shadow-lg p-8 space-y-6"
+          className="flex-1 bg-neutral-900 text-white border-white/10 rounded-2xl shadow-lg p-8 space-y-6"
         >
           <h3 className="text-2xl font-semibold mb-4">Open Roles</h3>
           <ul className="space-y-4 text-gray-200">
@@ -57,7 +54,12 @@ export default function JoinTheMission() {
               <span className="text-sm text-gray-400">(Full-time)</span>
             </li>
           </ul>
-          <p className="text-sm text-gray-400">
+          <p
+            className={cn(
+              "text-sm",
+              theme === "dark" ? "text-gray-400" : "text-gray-400"
+            )}
+          >
             Work directly with partners. Meet category-defining founders. Shape
             India’s startup ecosystem.
           </p>

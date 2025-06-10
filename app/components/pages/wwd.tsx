@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Sparkles, Rocket, TreeDeciduous } from "lucide-react";
 import { HoverEffect } from "../ui/card-hover-effect";
+import { useTheme } from "next-themes";
+
 const whatWeDoPoints = [
   "Sector-agnostic (core: Fintech, Healthtech, Cleantech, Consumer Tech, D2C, SaaS)",
   "Active support: Hiring, GTM strategy, follow-on fundraising",
@@ -35,8 +37,10 @@ const cardsDescriptions = [
 
 
 export default function WhatWeDo() {
+  const { theme } = useTheme();
+
   return (
-    <section className="max-w-[1200px] mx-auto px-6 mt-40 text-white font-[Inter] space-y-20">
+    <section className="max-w-[1200px] mx-auto px-6 mt-40  font-[Inter] space-y-20">
       {/* WHAT WE DO */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -52,7 +56,7 @@ export default function WhatWeDo() {
         viewport={{ once: true }}
         className="text-5xl md:text-6xl font-semibold tracking-tight text-left relative mb-6 flex pb-2 justify-center"
       >
-        <span className="border-b-2 border-white">What We Do</span>
+        <span className="border-b-2 ">What We Do</span>
         
       </motion.h2>
         <div className="bg-neutral-900 rounded-xl p-8 space-y-6 border border-neutral-700">
