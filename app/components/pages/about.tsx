@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { cn } from "@/app/lib/utils";
+
 const achievements = [
   "15+ years of startup ecosystem experience",
   "Ex-Director, TiE Delhi-NCR, Head Investment Pillar",
@@ -37,10 +36,8 @@ const team = [
 ];
 
 export default function About() {
-  const {theme} = useTheme();
-  console.log(theme);
   return (
-    <section className="max-w-[1200px] mx-auto px-6 mt-40 space-y-32  font-[Inter]">
+    <section className="max-w-[1200px] mx-auto px-6 mt-40 space-y-32 font-[Inter] text-black dark:text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +45,9 @@ export default function About() {
         viewport={{ once: true }}
         className="text-5xl md:text-6xl font-semibold tracking-tight text-center relative mx-auto flex flex-col pb-2 justify-center"
       >
-        <span className="w-fit mx-auto border-b-2 ">About Us</span>
+        <span className="w-fit mx-auto border-b-2 border-black dark:border-white">
+          About Us
+        </span>
       </motion.h2>
 
       {team.map((person, i) => (
@@ -67,9 +66,11 @@ export default function About() {
             <h3 className="text-3xl md:text-4xl font-semibold">
               {person.name}
             </h3>
-            <p className={cn(" text-base mb-4", theme === "dark" ? "text-neutral-400" : "text-neutral-700")}>{person.role}</p>
+            <p className="text-base mb-4 text-neutral-700 dark:text-neutral-400">
+              {person.role}
+            </p>
 
-            <div className={cn("space-y-5 border-l-2 pl-6", theme === "dark" ? "border-neutral-400 " : "border-neutral-400")}>
+            <div className="space-y-5 border-l-2 pl-6 border-neutral-400">
               {person.list.map((item, index) => (
                 <motion.div
                   key={index}
@@ -80,8 +81,8 @@ export default function About() {
                   className="relative"
                 >
                   <div className="flex flex-row space-x-2">
-                    <span className={cn(" w-1 h-1 my-auto rounded-full ", theme === "dark" ? "bg-white/80" : "bg-neutral-500")} />
-                    <p className={cn("text-sm  leading-relaxed", theme === "dark" ? "text-neutral-300" : "text-neutral-400")}>
+                    <span className="w-1 h-1 my-auto rounded-full bg-neutral-500 dark:bg-white/80" />
+                    <p className="text-sm leading-relaxed text-neutral-400 dark:text-neutral-300">
                       {item}
                     </p>
                   </div>
@@ -97,7 +98,7 @@ export default function About() {
               alt={person.name}
               width={500}
               height={500}
-              className="rounded-2xl object-cover  hover:grayscale-0 transition duration-500"
+              className="rounded-2xl object-cover hover:grayscale-0 transition duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 rounded-2xl" />
           </div>

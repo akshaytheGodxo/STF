@@ -1,55 +1,25 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { MoveRight } from "lucide-react";
 
 export default function Hero() {
   const [hovered, setHovered] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="sm:max-w-[1200px] max-w-screen mx-auto px-6 py-20 flex lg:flex-row flex-col gap-y-20">
-      <div className="font-[Playfair_Display] text-[12vw] lg:text-8xl w-full lg:w-fit break-words">
-        <div className="block leading-none">
-          SMALL<br />
-          TICKET<br />
-          FUNDING
-        </div>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 0.6 }}
-          className="h-[1px] bg-white w-full block "
-        ></motion.div>
-
-        <span className="text-sm md:text-base block">
-          Founder Friendly Capital
-        </span>
-      </div>
-
-      <div className="font-['Inter'] space-y-6 lg:ml-auto w-full lg:w-auto lg:mt-40">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tighter leading-tight text-right">
-          We back <br />
-          bold founders <br />
-          <span className="relative inline-block">
-            <motion.span
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 0.6 }}
-              className="absolute bottom-0 right-0 h-[3px] bg-gray-500"
-            />
-            <span className="relative z-10">Fast.</span>
-          </span>
+    <section className="max-w-[1200px] mx-auto px-6 py-32 flex flex-col items-center justify-center text-center space-y-8 text-black dark:text-white">
+      <div className="font-['Inter'] w-full lg:w-[70%] space-y-6">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+          We back <br /> bold founders
         </h2>
 
-        <h4 className="text-base md:text-xl font-semibold text-neutral-400 text-right">
+        <h4 className="text-base md:text-xl font-medium text-neutral-600 dark:text-neutral-400">
           Pre-seed to seed. Sector-agnostic. Founder-obsessed.
         </h4>
 
         <motion.button
-          className="bg-transparent  border-2 rounded-3xl w-full h-10 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center"
+          className="bg-transparent border-2 border-black dark:border-white rounded-full w-full sm:w-60 h-12 font-medium cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto text-black dark:text-white"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
@@ -61,12 +31,8 @@ export default function Hero() {
                   initial={{ y: -10, opacity: 0, position: "absolute" }}
                   animate={{ y: 0, opacity: 1, position: "absolute" }}
                   exit={{ y: -10, opacity: 0, position: "absolute" }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                    type: "spring",
-                  }}
-                  className="flex items-center justify-center w-full"
+                  transition={{ duration: 0.3, ease: "easeInOut", type: "spring" }}
+                  className="w-full text-center"
                 >
                   Pitch to us
                 </motion.span>
@@ -76,12 +42,8 @@ export default function Hero() {
                   initial={{ y: 10, opacity: 0, position: "absolute" }}
                   animate={{ y: 0, opacity: 1, position: "absolute" }}
                   exit={{ y: 10, opacity: 0, position: "absolute" }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                    type: "spring",
-                  }}
-                  className="flex items-center justify-center w-full"
+                  transition={{ duration: 0.3, ease: "easeInOut", type: "spring" }}
+                  className="w-full flex justify-center"
                 >
                   <MoveRight size={20} />
                 </motion.span>
