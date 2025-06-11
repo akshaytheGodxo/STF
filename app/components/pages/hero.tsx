@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-32 flex flex-col items-center justify-center text-center space-y-8 text-black dark:text-white">
       <div className="font-['Inter'] w-full lg:w-[70%] space-y-6">
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-tight">
           We back <br /> bold founders
         </h2>
 
