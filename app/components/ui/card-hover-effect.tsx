@@ -1,6 +1,6 @@
 import { cn } from "@/app/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-
+import Image from "next/image";
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -83,12 +83,16 @@ export const CardTitle = ({
   children,
 }: {
   className?: string;
-  children: React.ReactNode;
+  children: any;
 }) => {
   return (
-    <h4 className={cn("dark:text-zinc-100 text-black font-bold  tracking-wide mt-4", className)}>
-      {children}
-    </h4>
+    <Image 
+    src={children}
+    alt=""
+    width={100}
+    height={100}
+    className={cn("dark:text-zinc-100 text-black font-bold mx-auto tracking-wide mt-4", className)} />
+      
   );
 };
 export const CardDescription = ({

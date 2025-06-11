@@ -18,17 +18,17 @@ const whyChoosePoints = [
 
 const cardsDescriptions = [
   {
-    title: <Sparkles size={100} className="mx-auto" />,
+    title: "/plant.png",
     description: "Pre-Seed",
     link: "/",
   },
   {
-    title: <Rocket size={100} className="mx-auto" />,
+    title: "/early.png",
     description: "Early",
     link: "/",
   },
   {
-    title: <TreeDeciduous size={100} className="mx-auto" />,
+    title: "/tree.png",
     description: "Seed",
     link: "/",
   },
