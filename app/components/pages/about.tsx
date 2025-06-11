@@ -13,7 +13,7 @@ const achievements = [
 
 const achievements2 = [
   "10+ years of capital raising experience",
-  "Add only logos in the work ex",
+  
   "267+ Crores raised across 107+ companies",
   "Track record: 1 Unicorn, 2 Soonicorns",
   "Portfolio highlights: Spinny, Zypp, Yaantra.",
