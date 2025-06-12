@@ -11,6 +11,7 @@ import MediaAndAIF from "./components/pages/media";
 import Portfolio from "./components/pages/portfolio";
 import Navbar from "./components/pages/nav";
 import { AnimatePresence, motion } from "framer-motion";
+import Footer from "./components/pages/footer";
 import { cn } from "./lib/utils";
 
 import { useTheme} from "next-themes";
@@ -115,6 +116,7 @@ export default function Home() {
               <Portfolio />
             </div>
             <MediaAndAIF />
+            <Footer />
           </main>
         </motion.div>
       )}
