@@ -13,7 +13,7 @@ const achievements = [
 
 const achievements2 = [
   "10+ years of capital raising experience",
-  
+
   "267+ Crores raised across 107+ companies",
   "Track record: 1 Unicorn, 2 Soonicorns",
   "Portfolio highlights: Spinny, Zypp, Yaantra.",
@@ -71,23 +71,62 @@ export default function About() {
             </p>
 
             <div className="space-y-5 border-l-2 pl-6 border-neutral-400">
-              {person.list.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="flex flex-row space-x-2">
-                    <span className="w-1 h-1 my-auto rounded-full bg-neutral-500 dark:bg-white/80" />
-                    <p className="text-sm leading-relaxed text-neutral-400 dark:text-neutral-300">
-                      {item}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+              {person.list.map((item, index) => {
+                if (item.startsWith("Portfolio highlights")) {
+                  return person.name === "Sandro Stephen" ? (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.4 }}
+                      viewport={{ once: true }}
+                      className="relative"
+                    >
+                      <div className="flex flex-wrap gap-4 items-center pl-2">
+                        <Image
+                          src="/spinny.svg"
+                          alt="Spinny"
+                          width={60}
+                          height={30}
+                          className="object-contain"
+                        />
+                        <Image
+                          src="/zypp.svg"
+                          alt="Zypp"
+                          width={60}
+                          height={30}
+                          className="object-contain"
+                        />
+                        <Image
+                          src="/yaantra.jpg"
+                          alt="Yaantra"
+                          width={60}
+                          height={30}
+                          className="object-contain rounded-md"
+                        />
+                      </div>
+                    </motion.div>
+                  ) : null;
+                }
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.4 }}
+                    viewport={{ once: true }}
+                    className="relative"
+                  >
+                    <div className="flex flex-row space-x-2">
+                      <span className="w-1 h-1 my-auto rounded-full bg-neutral-500 dark:bg-white/80" />
+                      <p className="text-sm leading-relaxed text-neutral-400 dark:text-neutral-300">
+                        {item}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
 
