@@ -23,19 +23,19 @@ export default function MediaAndAIF() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="bg-neutral-900 border border-neutral-700 p-8 space-y-4 text-sm md:text-base text-neutral-300"
+        className="dark:bg-neutral-900 border dark:border-neutral-700 bg-neutral-100 text-black border-neutral-300 p-8 space-y-4 text-sm md:text-base dark:text-neutral-300"
       >
         <ul className="list-inside space-y-4">
           <li>
-            <span className="text-white font-medium">AIF Name:</span>{" "}
+            <span className="dark:text-white font-medium">AIF Name:</span>{" "}
             Small Ticket Funding Ventures Trust Fund I
           </li>
           <li>
-            <span className="text-white font-medium">Investment Manager:</span>{" "}
+            <span className="dark:text-white font-medium">Investment Manager:</span>{" "}
             Founder Friendly Ventures Private Limited
           </li>
           <li>
-            <span className="text-white font-medium">SEBI Registration Number:</span>{" "}
+            <span className="dark:text-white font-medium">SEBI Registration Number:</span>{" "}
             IN/AIF2/24-25/1690
           </li>
         </ul>
