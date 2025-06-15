@@ -103,10 +103,11 @@ export default function Home() {
             <div className="mt-38">
               <Hero />
             </div>
+            <WhatWeDo />
             <div id="about">
               <About />
             </div>
-            <WhatWeDo />
+            
             <Apply />
             <JoinTheMission />
             <div id="contacts">

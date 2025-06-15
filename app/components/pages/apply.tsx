@@ -36,7 +36,7 @@ export default function Apply() {
 
           <motion.button
             type="button"
-            className="border-2 rounded-3xl w-44 h-12 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto"
+            className="border-2  w-44 h-12 font-[Inter] cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >

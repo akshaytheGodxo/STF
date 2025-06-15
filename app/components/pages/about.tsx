@@ -4,26 +4,25 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const achievements = [
-  "15+ years of startup ecosystem experience",
-  "Ex-Director, TiE Delhi-NCR, Head Investment Pillar",
-  "Ex-Associate Partner, Rukam Capital (SEBI registered)",
-  "Portfolio highlits: Burger Singh, Sleepy Owl, Pilgrim, Beco",
-  "Indian Angel Network Incubator member",
+  "15+ years in startup ecosystems",
+  "Former Director, TiE Delhi-NCR (Investments)",
+  "Ex-Associate Partner, Rukam Capital (SEBI Registered)",
+  
+  "Member, Indian Angel Network Incubator",
 ];
 
 const achievements2 = [
-  "10+ years of capital raising experience",
-
-  "267+ Crores raised across 107+ companies",
-  "Track record: 1 Unicorn, 2 Soonicorns",
-  "Portfolio highlights: Spinny, Zypp, Yaantra.",
-  "Ex-VP Indian Angel Network",
+  "10+ years in capital raising",
+  "₹267 Cr+ raised across 107+ companies",
+  "Track record includes 1 Unicorn & 2 Soonicorns",
+  "Portfolio: Spinny, Zypp, Yaantra",
+  "Ex-VP, Indian Angel Network",
 ];
 
 const team = [
   {
     name: "Stanley Stephen",
-    role: "Managing Director",
+    role: "Managing Partner",
     img: "/stanley.jpg",
     list: achievements,
   },
@@ -37,15 +36,15 @@ const team = [
 
 export default function About() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 mt-40 space-y-32 font-[Inter] text-black dark:text-white">
+    <section className="max-w-[1200px] mx-auto px-6 mt-40 space-y-32 font-['IBM Plex Sans'] text-black dark:text-white">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-5xl md:text-6xl font-semibold tracking-tight text-center relative mx-auto flex flex-col pb-2 justify-center"
+        className="text-4xl md:text-5xl font-semibold tracking-normal text-center"
       >
-        <span className="w-fit mx-auto border-b-2 border-black dark:border-white">
+        <span className="border-b-2 border-black dark:border-white pb-1">
           About Us
         </span>
       </motion.h2>
@@ -57,56 +56,37 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: i * 0.2 }}
           viewport={{ once: true }}
-          className={`flex flex-col-reverse lg:flex-row items-center gap-16 ${
+          className={`flex flex-col-reverse lg:flex-row items-center gap-14 ${
             i % 2 === 1 ? "lg:flex-row-reverse" : ""
           }`}
         >
-          {/* Text Section */}
-          <div className="flex-1 space-y-4">
-            <h3 className="text-3xl md:text-4xl font-semibold">
+          {/* Text Content */}
+          <div className="flex-1 space-y-3">
+            <h3 className="text-2xl md:text-3xl font-semibold text-black dark:text-white">
               {person.name}
             </h3>
-            <p className="text-base mb-4 text-neutral-700 dark:text-neutral-400">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
               {person.role}
             </p>
 
-            <div className="space-y-5 border-l-2 pl-6 border-neutral-400">
+            <div className="space-y-4 border-l-2 pl-5 border-neutral-400 dark:border-neutral-600">
               {person.list.map((item, index) => {
-                if (item.startsWith("Portfolio highlights")) {
-                  return person.name === "Sandro Stephen" ? (
+                if (item.startsWith("Portfolio") && person.name === "Sandro Stephen") {
+                  return (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       viewport={{ once: true }}
-                      className="relative"
                     >
-                      <div className="flex flex-wrap gap-4 items-center pl-2">
-                        <Image
-                          src="/spinny.svg"
-                          alt="Spinny"
-                          width={60}
-                          height={30}
-                          className="object-contain"
-                        />
-                        <Image
-                          src="/zypp.svg"
-                          alt="Zypp"
-                          width={60}
-                          height={30}
-                          className="object-contain"
-                        />
-                        <Image
-                          src="/yaantra.jpg"
-                          alt="Yaantra"
-                          width={60}
-                          height={30}
-                          className="object-contain rounded-md"
-                        />
+                      <div className="flex flex-wrap gap-4 pl-2 items-center">
+                        <Image src="/spinny.svg" alt="Spinny" width={60} height={30} className="object-contain" />
+                        <Image src="/zypp.svg" alt="Zypp" width={60} height={30} className="object-contain" />
+                        <Image src="/yaantra.jpg" alt="Yaantra" width={60} height={30} className="object-contain" />
                       </div>
                     </motion.div>
-                  ) : null;
+                  );
                 }
 
                 return (
@@ -116,14 +96,12 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="relative"
+                    className="flex space-x-2 items-start"
                   >
-                    <div className="flex flex-row space-x-2">
-                      <span className="w-1 h-1 my-auto rounded-full bg-neutral-500 dark:bg-white/80" />
-                      <p className="text-sm leading-relaxed text-neutral-400 dark:text-neutral-300">
-                        {item}
-                      </p>
-                    </div>
+                    <span className="w-1 h-1 mt-2 rounded-full bg-neutral-500 dark:bg-white/80" />
+                    <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                      {item}
+                    </p>
                   </motion.div>
                 );
               })}
@@ -131,15 +109,16 @@ export default function About() {
           </div>
 
           {/* Image */}
-          <div className="relative w-full max-w-[400px] overflow-hidden rounded-2xl">
-            <Image
-              src={person.img}
-              alt={person.name}
-              width={500}
-              height={500}
-              className="rounded-2xl object-cover hover:grayscale-0 transition duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 rounded-2xl" />
+          <div className="w-full max-w-[360px] overflow-hidden border border-neutral-200 dark:border-neutral-700">
+            <div className="relative aspect-[4/5]">
+              <Image
+                src={person.img}
+                alt={person.name}
+                fill
+                className="object-cover  transition duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
+            </div>
           </div>
         </motion.div>
       ))}

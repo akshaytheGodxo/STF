@@ -27,7 +27,7 @@ export default function Contact() {
             href="mailto:stanleyteam@smallticketfunding.vc"
             className="hover:underline text-neutral-200/[2]"
           >
-            stanleyteam@smallticketfunding.vc
+            stanley@smallticketfunding.vc
           </a>
         </div>
 

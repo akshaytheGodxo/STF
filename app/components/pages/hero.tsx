@@ -9,17 +9,17 @@ export default function Hero() {
 
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-32 flex flex-col items-center justify-center text-center space-y-8 text-black dark:text-white">
-      <div className="font-['Inter'] w-full lg:w-[70%] space-y-6">
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-          We back <br /> bold founders
+      <div className="font-['IBM Plex Sans'] w-full lg:w-[70%] space-y-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-normal leading-tight">
+          We back bold founders
         </h2>
 
         <h4 className="text-base md:text-xl font-medium text-neutral-600 dark:text-neutral-400">
-          Pre-seed to seed. Sector-agnostic. Founder-obsessed.
+          Early Stage Investor. Sector-agnostic. Founder-obsessed.
         </h4>
 
         <motion.button
-          className="bg-transparent border-2 border-black dark:border-white rounded-full w-full sm:w-60 h-12 font-medium cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto text-black dark:text-white"
+          className="bg-transparent border-2 border-black dark:border-white rounded-none w-full sm:w-60 h-12 font-medium cursor-pointer relative overflow-hidden flex items-center justify-center mx-auto text-black dark:text-white"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >

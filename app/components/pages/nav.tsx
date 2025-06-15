@@ -41,7 +41,7 @@ export default function Navbar() {
             Portfolio
           </a>
           <a href="#contacts" className="hover:text-gray-600 dark:hover:text-gray-300">
-            Contacts
+            Contact Us
           </a>
           <a href="#about" className="hover:text-gray-600 dark:hover:text-gray-300">
             About Us
@@ -66,7 +66,7 @@ export default function Navbar() {
             Portfolio
           </a>
           <a href="#contacts" onClick={() => setIsMobileMenuOpen(false)}>
-            Contacts
+            Contact Us
           </a>
           <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>
             About Us
